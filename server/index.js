@@ -4,6 +4,7 @@ const express = require('express'),
     bodyParser = require('body-parser'),
     mongoose = require('mongoose'),
     config = require('./config/main');
+    router = require('./router');  
 
 mongoose.connect(config.database);
 
@@ -22,3 +23,4 @@ app.use(function(req, res, next) {
     next();
 });
 
+router(app);  
