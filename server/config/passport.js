@@ -25,7 +25,7 @@ const localLogin = new LocalStrategy(localOptions, function(email, password, don
 
 const jwtOptions = {
     // Telling passport to check authorizations headers for Jwt
-    jwtFromRequest: ExtractJwt.fromAuthHeader(),
+    jwtFromRequest: ExtractJwt.fromAuthHeaderWithScheme("jwt"),
     // Telling passpower where to find secret
     secretOrKey: config.secret
 }

@@ -50,7 +50,7 @@ UserSchema.pre('save', function(next) {
 
 // Method to compare password for login
 UserSchema.methods.comparePassword = function(candidatePassword, cb) {
-    bcypt.compare(candidatePassword, this.password, function(err, isMatch) {
+    bcrypt.compare(candidatePassword, this.password, function(err, isMatch) {
         if (err) { return cb(err); }
         cb(null, isMatch);
     });
